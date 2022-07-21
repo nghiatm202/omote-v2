@@ -1,0 +1,197 @@
+.form {
+    min-height: 100px;
+    text-align: center;
+    background: #fff;
+    margin: 0 auto;
+    align-self: center;
+}
+
+.form .heading {
+    font-size: 24px;
+    color: $color-primary;
+    font-weight: bold;
+    margin-top: 45px;
+}
+
+.form .desc {
+    text-align: center;
+    color: #25b1ee;
+    font-size: 14px;
+    line-height: calc(16.8 / 14);
+    margin: 16px 0 57px;
+    position: relative;
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background-color: $gray-dd;
+        top: 50%;
+    }
+
+    &::after {
+        right: 445px;
+    }
+
+    &::before {
+        left: 445px;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-message {
+    text-align: left;
+}
+
+.form-control {
+    padding: 22px;
+    border: 1px solid $gray-dd;
+    outline: none;
+    font-size: 18px;
+    line-height: calc(36 / 18);
+    background-color: $gray-f5;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+.form-submit {
+    margin-top: calc(163px - 33px);
+    margin-bottom: 100px;
+}
+
+.form-submit-wrapper {
+    position: relative;
+}
+
+.triangle-left {
+    position: absolute;
+    top: 52%;
+    right: 58%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #333;
+}
+
+.inner-triangle {
+    position: relative;
+    top: -5px;
+    left: 2px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid white;
+}
+
+.spacer {
+    margin-top: 36px;
+}
+
+.form-image {
+    margin: 33px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 767.98px) {
+    .form-image {
+        margin: 25px 0;
+
+        img {
+            max-width: 123px;
+        }
+    }
+
+    .form-control {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    .spacer {
+        margin-top: 5px;
+    }
+
+    .form .heading {
+        font-size: 18px;
+        margin-top: 35px;
+    }
+
+    .form .desc {
+        font-size: 11px;
+        margin: 5px 0 20px;
+
+        &::after,
+        &::before {
+            width: 54px;
+        }
+
+        &::after {
+            right: 415px;
+        }
+
+        &::before {
+            left: 415px;
+        }
+    }
+
+    .triangle-left {
+        right: 59%;
+        top: 54%;
+    }
+
+    .form-submit {
+        margin-top: 80px;
+        margin-bottom: 45px;
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .form-image {
+        margin: 20px 0;
+
+        img {
+            max-width: 90px;
+        }
+    }
+
+    .triangle-left {
+        right: 68.5%;
+        top: 55%;
+    }
+
+    .form .desc::before {
+        left: 210px;
+    }
+
+    .form .desc::after {
+        right: 210px;
+    }
+
+    .form .desc::before,
+    .form .desc::after {
+        width: 30px;
+    }
+}

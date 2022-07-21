@@ -1,0 +1,258 @@
+// -----------------------------------------------------------------------------
+// Header style
+// -----------------------------------------------------------------------------
+.header {
+    &__top {
+        background-color: $color-primary;
+        color: white;
+        font-size: 21px;
+        line-height: 1;
+
+        a {
+            display: inline-block;
+            font-size: 21px;
+            padding: 24px 0;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            // a {
+            //     max-width: 388px;
+
+            //     img {
+            //         width: 100%;
+            //         height: 100%;
+            //         object-fit: cover;
+            //     }
+            // }
+        }
+
+        &-text-desc {
+            font-size: 10px;
+            color: #fff;
+            opacity: 40%;
+        }
+
+        &-text-highlight {
+            color: $color-secondary;
+        }
+
+        .menu-btn {
+            position: relative;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            margin-bottom: -4px;
+        }
+
+        .menu-btn__burger {
+            width: 46px;
+            height: 6px;
+            background: #fff;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            content: '';
+            position: absolute;
+            width: 46px;
+            height: 6px;
+            background: #fff;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .menu-btn__burger::before {
+            transform: translateY(-8px);
+        }
+
+        .menu-btn__burger::after {
+            transform: translateY(8px);
+        }
+
+        // animation
+        .menu-btn.open .menu-btn__burger {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .menu-btn.open .menu-btn__burger::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+
+        .menu-btn.open .menu-btn__burger::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+    }
+
+    &__bottom {
+        background-color: #f5f5f5;
+        color: #333333;
+        font-size: 14px;
+        line-height: 1;
+        font-weight: bold;
+
+        &-container {
+            .menu__list {
+                display: flex;
+                align-items: center;
+
+                .menu__item {
+                    cursor: pointer;
+                    transition: all 0.3s;
+                    position: relative;
+
+                    a {
+                        color: #333;
+                        padding: 25px 36px;
+                        text-decoration: none;
+                        position: relative;
+                        display: inline-block;
+                        transition: .3s;
+                        width: 100%;
+
+                        &::before {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            content: '';
+                            width: 0;
+                            height: 1px;
+                            background-color: $color-primary;
+                            transition: .3s;
+                        }
+
+                        &:hover {
+                            color: $color-primary;
+                        }
+
+
+                        &:hover::before {
+                            width: 100%;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 1px;
+                        height: 100%;
+                        background-color: $gray-dd;
+                        left: 0;
+                        top: 0;
+                    }
+
+                    &:nth-child(4) {
+                        flex: 1;
+                        text-align: center;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 1px;
+                            height: 100%;
+                            background-color: $gray-dd;
+                            right: 0;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+
+            .navbar__links {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .header {
+        &__top {
+            padding: 0 15px;
+            z-index: 200;
+            width: 100%;
+            position: absolute;
+
+            &-text-desc {
+                font-size: 7px;
+            }
+
+            a {
+                padding: 15px 0;
+                font-size: 13px;
+            }
+        }
+
+
+
+        &__bottom {
+            height: 48px;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+            left: 0;
+            background-color: transparent;
+            // border-bottom: 1px solid #cfcfcf;
+
+            &-container {
+                .menu__list {
+                    display: none;
+                }
+
+                .navbar__links {
+                    padding-top: 43px;
+                    transition: all 0.5s ease-in-out;
+                    display: none;
+                    background-color: #fff;
+
+                    .navbar__link {
+                        border-bottom: 1px solid rgb(187, 187, 187);
+                        padding: 19px 0 19px 15px;
+
+                        a {
+                            color: black;
+                            display: block;
+                            font-size: 14px;
+                            font-weight: normal;
+
+                            &:hover {
+                                opacity: 0.6;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+
+                .navbar__links.show {
+                    transition: all 0.5s ease-in-out;
+                    display: block;
+                }
+            }
+        }
+
+        .menu-btn {
+            display: inline-flex;
+            margin-top: -4px;
+        }
+
+        .menu-btn__burger {
+            width: 23px;
+            height: 4px;
+        }
+
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+            width: 23px;
+            height: 4px;
+        }
+    }
+}

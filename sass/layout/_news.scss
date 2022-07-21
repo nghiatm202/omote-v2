@@ -1,0 +1,115 @@
+.news {
+    &-container {}
+
+    &-list {
+        text-align: left;
+    }
+
+    &-time {
+        color: $color-primary;
+        font-weight: bold;
+        padding-right: 27px;
+    }
+
+    &-title {
+        color: #222;
+    }
+
+    &-item {
+        border-bottom: 1px solid $gray-dd;
+        display: block;
+        padding: 30px 0 30px 8px;
+        font-size: 15px;
+        line-height: calc(33 / 15);
+        cursor: pointer;
+
+        &:nth-child(1) {
+            border-top: 1px solid $gray-dd;
+        }
+    }
+
+    .form-submit-wrapper {
+        text-align: center;
+    }
+
+    .form-submit {
+        margin-top: 50px;
+        margin-bottom: 175px;
+    }
+
+    .triangle-left {
+        top: 23.5%;
+    }
+
+    .desc-common {
+
+        &::after,
+        &::before {
+            width: 30px;
+        }
+
+        &::after {
+            right: 440px;
+        }
+
+        &::before {
+            left: 440px;
+        }
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .news {
+        &-item {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            line-height: calc(46 / 24);
+        }
+
+        .form-submit {
+            margin-top: 83px;
+            margin-bottom: 41px;
+        }
+
+        .triangle-left {
+            top: 58%;
+            right: 62%;
+        }
+
+        .desc-common {
+
+            &::after,
+            &::before {
+                width: 28px;
+            }
+
+            &::after {
+                right: 319px;
+            }
+
+            &::before {
+                left: 319px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575.98px) {
+    .news-item {
+        padding: 10px 0 10px 8px;
+    }
+
+    .news .desc-common::before {
+        left: 230px;
+    }
+
+    .news .desc-common::after {
+        right: 230px;
+    }
+
+    .news .triangle-left {
+        top: 57%;
+        right: 67%;
+    }
+}

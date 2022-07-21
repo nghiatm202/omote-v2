@@ -1,0 +1,97 @@
+// -----------------------------------------------------------------------------
+// Button style
+// -----------------------------------------------------------------------------
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 8px 29px;
+    border: 1px solid #000;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    transition: all .2s;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: calc(30 / 15);
+}
+
+.button--outline {
+    &::before {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        z-index: 2;
+        content: '';
+        width: 0;
+        height: 0;
+        border: 1px solid transparent;
+        box-sizing: content-box;
+    }
+
+    &::after {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        z-index: 2;
+        content: '';
+        width: 0;
+        height: 0;
+        border: 1px solid transparent;
+        box-sizing: content-box;
+    }
+
+    &:hover {
+        color: $color-primary;
+        text-decoration: none;
+
+        &::before {
+            width: 100%;
+            height: 100%;
+            border-top-color: $color-primary;
+            border-right-color: $color-primary;
+            transition: width .3s, height .3s .3s;
+        }
+
+        &::after {
+            width: 100%;
+            height: 100%;
+            border-bottom-color: $color-primary;
+            border-left-color: $color-primary;
+            transition: height .3s, width .3s .3s;
+        }
+    }
+}
+
+.button--filled {
+    background-color: #ccc;
+    color: white;
+    border-color: #ccc;
+
+    &:hover {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.form-submit {
+    position: relative;
+    padding-left: 90px;
+    padding-right: 80px;
+    color: #333;
+}
+
+
+@media screen and (max-width: 767.98px) {
+    .button--filled {
+        margin: 0 0 45px 15px;
+    }
+
+    .form-submit {
+        padding: 12px 36px;
+        color: #333;
+        font-size: 12px;
+    }
+}
+

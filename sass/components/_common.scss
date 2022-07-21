@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// All other style
+// -----------------------------------------------------------------------------
+
+.heading-common {
+    font-size: 24px;
+    color: $color-primary;
+    font-weight: bold;
+    margin-top: 45px;
+    text-align: center;
+}
+
+.desc-common {
+    text-align: center;
+    color: #25b1ee;
+    font-size: 14px;
+    line-height: calc(16.8 / 14);
+    margin: 16px 0 57px;
+    position: relative;
+
+    &::after,
+    &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 1px;
+        background-color: $gray-dd;
+        top: 50%;
+    }
+
+    &::after {
+        right: 445px;
+    }
+
+    &::before {
+        left: 445px;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    .desc-common {
+        margin: 11px 0 26px;
+    }
+
+    .heading-common {
+        margin-top: 25px;
+    }
+}

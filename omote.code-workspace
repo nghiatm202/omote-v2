@@ -1,0 +1,36 @@
+{
+  "folders": [{
+    "path": "."
+  }],
+  "settings": {
+    "liveSassCompile.settings.formats": [{
+      "format": "expanded", // expanded, nested, compressed
+      "extensionName": ".min.css",
+      "savePath": "/responsive-omote/assets/css/"
+    }],
+    "liveSassCompile.settings.generateMap": true,
+    "editor.formatOnSave": true,
+    "beautify.language": {
+      "js": {
+        "type": [
+          "javascript",
+          "json",
+          "jsonc"
+        ],
+        "filename": [
+          ".jshintrc",
+          ".jsbeautifyrc"
+        ]
+      },
+      "css": [
+        "css",
+        "scss"
+      ],
+      "html": [
+        "htm",
+        "html",
+        "blade"
+      ]
+    },
+  },
+}

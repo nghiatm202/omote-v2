@@ -1,0 +1,109 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: #FFF;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    word-wrap: break-word;
+    line-height: 1;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    @include hover {
+        color: $link-color;
+        text-decoration: underline;
+    }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(196, 196, 196, 0.4);
+    z-index: 99;
+    display: none;
+    transition: all .5s ease-in-out;
+}
+
+#overlay.show {
+    display: initial;
+    transition: all .5s ease-in-out;
+}
+
+.sticky {
+    border-top: 7px solid $color-primary;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.heading {
+    font-size: 36px;
+    line-height: calc(54 / 36);
+    font-weight: bold;
+    color: $color-primary;
+    z-index: 1;
+    padding: 0 60px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: url(/assets/img/home/icon-headline-right.png);
+        top: -16%;
+        right: 0;
+    }
+
+    &::before {
+        position: absolute;
+        content: url(/assets/img/home/icon-headline-left.png);
+        top: -16%;
+        left: 0;
+    }
+}
+
+.scroll-margin-top {
+    scroll-margin-block-start: 70px;
+}
+
+@media screen and (max-width: 767.98px) {
+    .heading {
+
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+}
